@@ -21,6 +21,8 @@ RUN mkdir -p /opt \
     && unzip s3cmd-${S3CMD_CURRENT_VERSION}.zip -d /opt/
 RUN ln -s /opt/s3cmd-${S3CMD_CURRENT_VERSION}/s3cmd /usr/bin/s3cmd
 
+RUN sh configure_s3cmd.sh
+
 ENV ENV="/etc/profile"
 ADD bin/update.sh /etc/profile.d/
 
