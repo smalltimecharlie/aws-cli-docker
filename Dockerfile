@@ -7,6 +7,9 @@ RUN apk -uv add --no-cache groff jq less && \
     
 RUN apk update && apk add bash    
 
+RUN apk update && apk add inotify-tools
+RUN apk add --no-cache ca-certificates
+
 RUN apk add --no-cache python py-pip py-setuptools ca-certificates libmagic
 RUN pip install python-dateutil python-magic
 
