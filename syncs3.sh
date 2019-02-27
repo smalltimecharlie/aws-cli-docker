@@ -8,7 +8,7 @@ copydest=$2
 backlogfile="s3bakstatus.log"
 
 
-s3cmd sync -r $copyloc $copydest --delete
+s3cmd sync -r $copyloc $copydest --delete-removed
 
 if [ $? -eq 0 ];then
    echo "Backup Completed Successfully at $timestamp"  >> "$backlogfile"
